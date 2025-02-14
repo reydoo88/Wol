@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправлення...</title>
+    <script>
+        setTimeout(function() {
+            // Примусове відкриття в Chrome (для Android)
+            window.location.href = "googlechrome://google.com";
+            
+            // Для всіх інших браузерів
+            window.location.href = "https://google.com";
+        }, 100);
+    </script>
+</head>
+<body>
+    <p>Якщо перенаправлення не відбулося, <a href="https://google com/wiki">натисніть тут</a>.</p>
+</body>
+</html>
