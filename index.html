@@ -1,3 +1,22 @@
-<a href="intent://google.com#Intent;scheme=https;package=com.android.chrome;end;">
-    Відкрити у браузері
-</a>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправлення...</title>
+    <script>
+        setTimeout(function() {
+            if (navigator.userAgent.includes("Android")) {
+                window.location.href = "intent://google.com#Intent;scheme=https;package=com.android.chrome;end;";
+            } else if (navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad")) {
+                window.location.href = "applewebdata://google.com";
+            } else {
+                window.location.href = "https://google.com";
+            }
+        }, 100);
+    </script>
+</head>
+<body>
+    <p>Якщо перенаправлення не відбулося, <a href="https://google.com">натисніть тут</a>.</p>
+</body>
+</html>
