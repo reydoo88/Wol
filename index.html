@@ -6,15 +6,17 @@
     <title>Перенаправлення...</title>
     <script>
         setTimeout(function() {
-            // Примусове відкриття в Chrome (для Android)
-            window.location.href = "googlechrome://google.com";
-            
-            // Для всіх інших браузерів
-            window.location.href = "https://google.com";
+            if (navigator.userAgent.includes("Android")) {
+                window.location.href = "intent://google.com#Intent;scheme=https;package=com.android.chrome;end;";
+            } else if (navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad")) {
+                window.location.href = "applewebdata://google.com";
+            } else {
+                window.location.href = "https://google.com";
+            }
         }, 100);
     </script>
 </head>
 <body>
-    <p>Якщо перенаправлення не відбулося, <a href="https://google com/wiki">натисніть тут</a>.</p>
+    <p>Якщо перенаправлення не відбулося, <a href="https://google.com">натисніть тут</a>.</p>
 </body>
 </html>
